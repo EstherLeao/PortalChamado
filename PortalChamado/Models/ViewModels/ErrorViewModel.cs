@@ -1,6 +1,6 @@
 using System;
 
-namespace PortalChamado.Models
+namespace PortalChamado.Models.ViewModels
 {
     public class ErrorViewModel
     {
