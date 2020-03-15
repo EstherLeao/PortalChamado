@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PortalChamado.Data;
 using PortalChamado.Models;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace PortalChamado.Controllers
 {
