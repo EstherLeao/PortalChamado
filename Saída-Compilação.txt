@@ -1,0 +1,6 @@
+﻿1>------ Compilação iniciada: Projeto: PortalChamado, Configuração: Debug Any CPU ------
+1>Views\_ViewImports.cshtml(2,7,2,27): warning CS0105: A diretiva using para "PortalChamado.Models" apareceu anteriormente neste namespace
+1>PortalChamado -> C:\Users\esthe\source\repos\PortalChamado\PortalChamado\bin\Debug\netcoreapp3.1\PortalChamado.dll
+1>PortalChamado -> C:\Users\esthe\source\repos\PortalChamado\PortalChamado\bin\Debug\netcoreapp3.1\PortalChamado.Views.dll
+1>Projeto de compilação pronto "PortalChamado.csproj".
+========== Compilar: 1 com êxito, 0 com falha, 0 atualizados, 0 ignorados ==========

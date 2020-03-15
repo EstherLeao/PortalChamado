@@ -15,5 +15,7 @@ namespace PortalChamado.Data
         }
 
         public DbSet<PortalChamado.Models.Acesso> Acesso { get; set; }
+        public DbSet<PortalChamado.Models.Usuario> Usuario { get; set; }
+        public DbSet<PortalChamado.Models.Chamado> Chamado { get; set; }
     }
 }
