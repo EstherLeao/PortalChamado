@@ -14,14 +14,13 @@ namespace PortalChamado.Models
         public string TipoAcesso { get; set; }
         public ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
 
+
         public Acesso()
         {
 
         }
-
-        public Acesso(int idAcesso, string tipoAcesso)
+        public Acesso(string tipoAcesso)
         {
-            IdAcesso = idAcesso;
             TipoAcesso = tipoAcesso;
         }
 

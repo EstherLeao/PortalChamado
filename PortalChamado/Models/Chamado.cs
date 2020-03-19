@@ -9,7 +9,7 @@ namespace PortalChamado.Models
     {
         [Key]
         public int IdChamado { get; set; }
-         public int LoginCriador { get; set; }
+        public int LoginCriador { get; set; }
         public int Carteira { get; set; }
         public int Quantidade{ get; set; }
         public int LoginTratamento { get; set; }
@@ -26,9 +26,8 @@ namespace PortalChamado.Models
 
         }
 
-        public Chamado(int idChamado, int loginCriador, int carteira, int Quantidade, int loginTratamento, string texto, string assunto, ChamadoImportancia importancia, DateTime dataInicio, DateTime dataResposta, ChamadoStatus status, Usuario usuario)
+        public Chamado(int loginCriador, int carteira, int Quantidade, int loginTratamento, string texto, string assunto, ChamadoImportancia importancia, DateTime dataInicio, DateTime dataResposta, ChamadoStatus status, Usuario usuario)
         {
-            IdChamado = idChamado;
             LoginCriador = loginCriador;
             Carteira = carteira;
             LoginTratamento = loginTratamento;
@@ -40,5 +39,6 @@ namespace PortalChamado.Models
             Status = status;
             Usuario = usuario;
         }
+
     }
 }

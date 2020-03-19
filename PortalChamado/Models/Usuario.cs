@@ -21,15 +21,15 @@ namespace PortalChamado.Models
 
         }
 
-        public Usuario(int idUsuario, int login, string nome, string tipo, string senha, Acesso acesso)
+        public Usuario(int login, string nome, string tipo, string senha, Acesso acesso)
         {
-            IdUsuario = idUsuario;
             Login = login;
             Nome = nome;
             Tipo = tipo;
             Senha = senha;
             Acesso = acesso;
         }
+
 
         public void AddChamdo(Chamado c)
         {
@@ -43,11 +43,11 @@ namespace PortalChamado.Models
 
         public double ContChamadoAbr (DateTime inicio, DateTime final)
         {
-            return Chamado.Where(c => c.DataInicio >= inicio && c.DataInicio <= final).Sum(c => c.Quantidade);
+            return Chamado.Where(c => c.DataInicio >= inicio && c.DataInicio <= final).Sum(c => c.IdChamado);
         }
         public double ContChamadoRsp(DateTime inicio, DateTime final)
         {
-            return Chamado.Where(c => c.DataResposta >= inicio && c.DataResposta <= final).Sum(c => c.Quantidade);
+            return Chamado.Where(c => c.DataResposta >= inicio && c.DataResposta <= final).Sum(c => c.IdChamado);
         }
     }
 }
