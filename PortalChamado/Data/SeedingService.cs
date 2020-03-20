@@ -14,7 +14,6 @@ namespace PortalChamado.Data
         {
             _context = context;
         }
-
         public void Seed()
         {
             if (_context.Acesso.Any() ||
@@ -35,5 +34,6 @@ namespace PortalChamado.Data
 
             _context.SaveChanges();
         }
+
     }
 }
