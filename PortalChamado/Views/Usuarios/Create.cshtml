@@ -1,4 +1,4 @@
-﻿@model PortalChamado.Models.Usuario
+﻿@model PortalChamado.Models.ViewModels.UsuarioFormViewModel
 @{
     ViewData["Title"] = "Create";
 }
@@ -11,16 +11,20 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="Login" class="control-label"></label>
-                <input asp-for="Login" class="form-control" />
+                <label asp-for="Usuario.Login" class="control-label"></label>
+                <input asp-for="Usuario.Login" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+                <label asp-for="Usuario.Nome" class="control-label"></label>
+                <input asp-for="Usuario.Nome" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Tipo" class="control-label"></label>
-                <input asp-for="Tipo" class="form-control" />
+                <label asp-for="Usuario.Tipo" class="control-label"></label>
+                <input asp-for="Usuario.Tipo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.IdAcesso" class="control-label"></label>
+                <select asp-for="Usuario.IdAcesso" asp-items="@(new SelectList(Model.Acessos, "IdAcesso","TipoAcesso"))" class="form-control"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
