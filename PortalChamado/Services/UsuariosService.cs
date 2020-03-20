@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PortalChamado.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace PortalChamado.Services
 {
@@ -29,7 +30,7 @@ namespace PortalChamado.Services
 
         public Usuario FindById(int id)
         {
-            return _context.Usuario.FirstOrDefault(obj => obj.IdUsuario == id);
+            return _context.Usuario.Include(obj => obj.Acesso).FirstOrDefault(obj => obj.IdUsuario == id);
         }
 
         public void Remove(int id)
