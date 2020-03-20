@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using PortalChamado.Data;
+using PortalChamado.Services; 
 
 namespace PortalChamado
 {
@@ -31,6 +32,7 @@ namespace PortalChamado
                     options.UseSqlServer(Configuration.GetConnectionString("PortalChamadoContext")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<UsuariosService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
