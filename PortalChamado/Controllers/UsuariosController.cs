@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using PortalChamado.Models;
 using PortalChamado.Models.ViewModels;
 using PortalChamado.Services;
+using PortalChamado.Services.Exceptions;
 
 namespace PortalChamado.Controllers
 {
@@ -83,7 +84,47 @@ namespace PortalChamado.Controllers
 
             return View(obj);
         }
-   
 
-}
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _usuarioService.FindById(id.Value);
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            List<Acesso> acessos = _acessoService.FindAll();
+            UsuarioFormViewModel viewModel = new UsuarioFormViewModel { Usuario = obj, Acessos = acessos };
+            return View(viewModel);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id,Usuario usuario) 
+        {
+            if(id != usuario.IdUsuario)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                _usuarioService.Update(usuario);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (NotFoundException)
+            {
+                return NotFound();
+            }
+            catch (DBConcurrencyException)
+            {
+                return BadRequest();
+            }
+        }
+    }
 }

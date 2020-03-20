@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using PortalChamado.Models;
 using Microsoft.EntityFrameworkCore;
+using PortalChamado.Services.Exceptions;
 
 namespace PortalChamado.Services
 {
@@ -38,6 +39,24 @@ namespace PortalChamado.Services
             var obj = _context.Usuario.Find(id);
             _context.Usuario.Remove(obj);
             _context.SaveChanges();
+        }
+
+        public void Update(Usuario obj)
+        {
+            if(!_context.Usuario.Any(x => x.IdUsuario == obj.IdUsuario))
+            {
+                throw new NotFoundException("Id não encontrado");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch(DBConcurrencyException e)
+            {
+                throw new DBConcurrencyException(e.Message);
+            }
+
         }
     }
 }
