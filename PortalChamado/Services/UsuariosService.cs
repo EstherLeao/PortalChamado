@@ -26,5 +26,17 @@ namespace PortalChamado.Services
             _context.Add(obj);
             _context.SaveChanges();
         }
+
+        public Usuario FindById(int id)
+        {
+            return _context.Usuario.FirstOrDefault(obj => obj.IdUsuario == id);
+        }
+
+        public void Remove(int id)
+        {
+            var obj = _context.Usuario.Find(id);
+            _context.Usuario.Remove(obj);
+            _context.SaveChanges();
+        }
     }
 }
