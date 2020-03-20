@@ -23,6 +23,7 @@ namespace PortalChamado.Services
 
         public void Insert(Usuario obj)
         {
+            obj.Acesso = _context.Acesso.First();
             _context.Add(obj);
             _context.SaveChanges();
         }

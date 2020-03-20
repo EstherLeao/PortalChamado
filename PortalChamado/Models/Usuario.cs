@@ -14,6 +14,7 @@ namespace PortalChamado.Models
         public string Tipo { get; set; }
         public string Senha { get; set; }
         public Acesso Acesso { get; set; }
+        public int IdAcesso { get; set; }
         public ICollection<Chamado> Chamado { get; set; } = new List<Chamado>();
 
         public Usuario()
