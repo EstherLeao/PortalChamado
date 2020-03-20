@@ -20,5 +20,11 @@ namespace PortalChamado.Services
         {
             return _context.Usuario.ToList();
         }
+
+        public void Insert(Usuario obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 }
