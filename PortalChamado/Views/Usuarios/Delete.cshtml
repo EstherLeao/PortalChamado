@@ -5,8 +5,7 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<h3>Tem certeza que você quer deletar?</h3>
-
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Usuário</h4>
     <hr />
@@ -33,8 +32,8 @@
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="IdUsuario" />
-        <input type="submit" value="Delete" class="btn btn-danger" />
-        <a asp-action="Index" >Votar para a Lista</a>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
     </form>
 </div>
 

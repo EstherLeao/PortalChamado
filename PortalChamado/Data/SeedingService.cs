@@ -27,7 +27,7 @@ namespace PortalChamado.Data
             Acesso a2 = new Acesso("Control");
             Acesso a3 = new Acesso("Supervisor");
 
-            Usuario u1 = new Usuario(213579, "Esther Leão", "Programador", "senha", a1);
+            Usuario u1 = new Usuario("213579", "Esther Leão", "Programador", "senha", a1);
 
             _context.Acesso.AddRange(a1, a2, a3);
             _context.Usuario.Add(u1);

@@ -9,7 +9,7 @@ namespace PortalChamado.Models
     {
         [Key]
         public int IdUsuario { get; set; }
-        public int Login { get; set; }
+        public string Login { get; set; }
         public string Nome { get; set; }
         public string Tipo { get; set; }
         public string Senha { get; set; }
@@ -22,7 +22,7 @@ namespace PortalChamado.Models
 
         }
 
-        public Usuario(int login, string nome, string tipo, string senha, Acesso acesso)
+        public Usuario( string login, string nome, string tipo, string senha, Acesso acesso)
         {
             Login = login;
             Nome = nome;

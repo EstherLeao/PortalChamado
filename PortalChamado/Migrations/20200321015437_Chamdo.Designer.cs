@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PortalChamado.Data;
 
 namespace PortalChamado.Migrations
 {
     [DbContext(typeof(PortalChamadoContext))]
-    partial class PortalChamadoContextModelSnapshot : ModelSnapshot
+    [Migration("20200321015437_Chamdo")]
+    partial class Chamdo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

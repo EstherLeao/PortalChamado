@@ -9,10 +9,10 @@ namespace PortalChamado.Models
     {
         [Key]
         public int IdChamado { get; set; }
-        public int LoginCriador { get; set; }
+        public string LoginCriador { get; set; }
         public int Carteira { get; set; }
         public int Quantidade{ get; set; }
-        public int LoginTratamento { get; set; }
+        public string LoginTratamento { get; set; }
         public string Texto { get; set; }
         public string Assunto { get; set; }
         public Enums.ChamadoImportancia Importancia { get; set; }
@@ -26,10 +26,11 @@ namespace PortalChamado.Models
 
         }
 
-        public Chamado(int loginCriador, int carteira, int Quantidade, int loginTratamento, string texto, string assunto, ChamadoImportancia importancia, DateTime dataInicio, DateTime dataResposta, ChamadoStatus status, Usuario usuario)
+        public Chamado(string loginCriador, int carteira, int quantidade, string loginTratamento, string texto, string assunto, ChamadoImportancia importancia, DateTime dataInicio, DateTime dataResposta, ChamadoStatus status, Usuario usuario)
         {
             LoginCriador = loginCriador;
             Carteira = carteira;
+            Quantidade = quantidade;
             LoginTratamento = loginTratamento;
             Texto = texto;
             Assunto = assunto;
